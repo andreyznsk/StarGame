@@ -31,7 +31,5 @@ public class StarGeme extends ApplicationAdapter {
 	public void dispose () {
 		batch.dispose();
 		img.dispose();
-		background.dispose();
-
 	}
 }
