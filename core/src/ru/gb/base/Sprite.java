@@ -24,6 +24,10 @@ public class Sprite extends Rect {
         setWidth(height * aspect);
     }
 
+    public void update(float delta) {
+
+    }
+
     public void draw(SpriteBatch batch) {
         batch.draw(
                 regions[frame],
@@ -44,6 +48,14 @@ public class Sprite extends Rect {
     }
 
     public boolean touchUp(Vector2 touch, int pointer, int button) {
+        return false;
+    }
+
+    public boolean keyDown(int keycode) {
+        return false;
+    }
+
+    public boolean keyUp(int keycode) {
         return false;
     }
 
