@@ -8,7 +8,7 @@ import ru.gb.math.Rect;
 import ru.gb.pool.BulletPool;
 import ru.gb.sprite.Bullet;
 
-public class Ship extends Sprite {
+public abstract class Ship extends Sprite {
 
     protected final Vector2 v0;
     protected final Vector2 v;
@@ -50,6 +50,26 @@ public class Ship extends Sprite {
             reloadTimer = 0f;
             shoot();
         }
+    }
+
+    public void damage(int damage) {
+        hp -= damage;
+        if (hp <= 0) {
+            hp = 0;
+            destroy();
+        }
+        frame = 1;
+    }
+
+    public abstract boolean isBulletCollision(Bullet bullet);
+
+    public int getBulletDamage() {
+        return bulletDamage;
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
     }
 
     private void shoot() {

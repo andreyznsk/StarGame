@@ -30,6 +30,16 @@ public class EnemyShip extends Ship {
         bulletPos.set(pos.x, pos.y - getHalfHeight());
     }
 
+    @Override
+    public boolean isBulletCollision(Bullet bullet) {
+        return !(
+                bullet.getRight() < getLeft()
+                        || bullet.getLeft() > getRight()
+                        || bullet.getBottom() > pos.y
+                        || bullet.getTop() < getBottom()
+        );
+    }
+
     public void set(
             TextureRegion[] regions,
             Vector2 v0,

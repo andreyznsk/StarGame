@@ -32,7 +32,7 @@ public class MainShip extends Ship {
         bulletDamage = 1;
         reloadInterval = RELOAD_INTERVAL;
         v0.set(0.5f, 0);
-        hp = 100;
+        hp = 1;
     }
 
     @Override
@@ -133,6 +133,16 @@ public class MainShip extends Ship {
                 break;
         }
         return false;
+    }
+
+    @Override
+    public boolean isBulletCollision(Bullet bullet) {
+        return !(
+                bullet.getRight() < getLeft()
+                || bullet.getLeft() > getRight()
+                || bullet.getBottom() > pos.y
+                || bullet.getTop() < getBottom()
+        );
     }
 
     private void moveRight() {
