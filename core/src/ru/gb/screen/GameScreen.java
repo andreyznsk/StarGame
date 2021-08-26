@@ -19,7 +19,7 @@ import ru.gb.utils.EnemyEmitter;
 
 public class GameScreen extends BaseScreen {
 
-    private static final int STAR_COUNT = 64;
+    private static final int STAR_COUNT = 70;
 
     private Texture bg;
     private Background background;
