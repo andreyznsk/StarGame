@@ -8,7 +8,7 @@ import com.badlogic.gdx.math.Vector2;
 import ru.gb.base.Sprite;
 import ru.gb.math.Rect;
 
-public class Logo extends Sprite {
+public class GameOver extends Sprite {
 
     private static final float HEIGHT = 0.08f;
     private static final float BOTTOM_MARGIN = 0.009f;
@@ -17,7 +17,7 @@ public class Logo extends Sprite {
     private Vector2 touch;
     private Vector2 v;
 
-    public Logo(TextureAtlas atlas) {
+    public GameOver(TextureAtlas atlas) {
         super(new TextureRegion(atlas.findRegion("message_game_over")));
         this.touch = new Vector2();
         this.v = new Vector2();
